@@ -8,12 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* ----- 全体設定（明るく爽やかなカラーパレット） ----- */
+    /* ----- 全体設定 ----- */
     :root {
       --bg-light: #f4f9f5;
       --bg-white: #ffffff;
-      --primary-color: #2e7d32; /* 優しく力強いグリーン */
-      --accent-color: #ff9800;  /* 元気なオレンジ */
+      --primary-color: #2e7d32;
+      --accent-color: #ff9800;
       --text-main: #2c3e50;
       --text-sub: #607d8b;
       --line-green: #06c755;
@@ -35,20 +35,18 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 1rem 2rem;
+      padding: 0.6rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    header .logo {
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--primary-color);
+    .header-logo img {
+      height: 45px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
     }
-    header .logo span { color: var(--accent-color); }
     header nav { display: flex; gap: 1.5rem; }
     header nav a {
       font-size: 0.95rem;
@@ -61,15 +59,22 @@
     /* ----- ヒーローセクション ----- */
     .hero {
       position: relative;
-      padding: 100px 20px;
+      padding: 60px 20px 80px;
       text-align: center;
       background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
       border-bottom-left-radius: 40px;
       border-bottom-right-radius: 40px;
     }
+    .hero-chr-img {
+      max-width: 260px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.1));
+      border-radius: 16px;
+    }
     .hero h1 {
       font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 800;
       color: var(--primary-color);
       margin-bottom: 15px;
@@ -205,10 +210,11 @@
 
     /* ----- スマホ対応 ----- */
     @media (max-width: 768px) {
-      header { flex-direction: column; gap: 10px; padding: 1rem; }
+      header { flex-direction: column; gap: 10px; padding: 0.8rem 1rem; }
       header nav { gap: 1rem; }
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1rem; }
+      .hero-chr-img { max-width: 200px; }
       section { padding: 40px 15px; }
     }
   </style>
@@ -217,7 +223,9 @@
 
   <!-- ヘッダー -->
   <header>
-    <div class="logo">TEAM <span>YOSUGA</span></div>
+    <div class="header-logo">
+      <img src="YOSUGA_main.jpg" alt="TEAM YOSUGA Logo">
+    </div>
     <nav>
       <a href="#about">ABOUT</a>
       <a href="#sports">SPORTS</a>
@@ -228,6 +236,7 @@
 
   <!-- ヒーローセクション -->
   <div class="hero">
+    <img src="YOSUGA_chr.jpg" alt="TEAM YOSUGA Character" class="hero-chr-img">
     <h1>TEAM YOSUGA</h1>
     <p>みんなで楽しむ！ パデル ・ ピックルボール ・ テニス</p>
     <a href="#reserve" class="btn-main">イベント・練習会に参加予約する</a>
