@@ -217,6 +217,62 @@
       .hero-chr-img { max-width: 200px; }
       section { padding: 40px 15px; }
     }
+    /* ----- 代表メッセージ ----- */
+
+.representative-box {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+
+.representative-photo {
+  flex: 0 0 260px;
+  text-align: center;
+}
+
+.representative-photo img {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.representative-photo h3 {
+  margin-top: 16px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.representative-photo .role {
+  color: var(--text-sub);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.representative-message {
+  flex: 1;
+}
+
+.representative-message p {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+
+  .representative-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .representative-message {
+    text-align: left;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -299,8 +355,49 @@
   <!-- 代表メッセージ -->
   <section id="message">
     <h2 class="section-title">MESSAGE</h2>
-    <div class="message-box">
-      <p>TEAM YOSUGA 福田代表からの素敵な素敵なメッセージをここに表示。<br>「できた！」という喜びや新しい出会いを通じて、子どもたちの健やかな成長と温かい地域コミュニティ作りを目指します。</p>
+
+    <div class="message-box representative-box">
+
+      <div class="representative-photo">
+        <img src="fukuda.jpg" alt="TEAM YOSUGA代表 福田恭平">
+
+        <h3>福田 恭平</h3>
+        <p class="role">TEAM YOSUGA 代表</p>
+      </div>
+
+      <div class="representative-message">
+
+          <p>
+            <strong>
+              TEAM YOSUGAを立ち上げたのは、
+              「まずはボールを打ってみる」その一歩から、
+              誰かと繋がったり、新しい自分に出会えたりする瞬間を、
+              この三重県北勢地区でたくさん作りたいと思ったからです。
+            <strong>
+        </p>
+
+        <p>
+          パデル、ピックルボール、テニス。
+          どれも道具はシンプルですが、
+          初めて見ると驚くほど夢中になれるスポーツです。
+        </p>
+
+        <p>
+          うまく打てた時の「できた！」という笑顔、
+          初めて会った人と自然に生まれる会話。
+          そうした一つひとつが、
+          子どもたちの成長にも、
+          大人にとっての新しい楽しみにも繋がっていくと信じています。
+        </p>
+
+        <p>
+          初心者の方も、ご家族での参加も大歓迎です。
+          ラケットを握ったことがない方こそ、
+          ぜひ一度、私たちの練習会に遊びに来てください。
+        </p>
+
+      </div>
+
     </div>
   </section>
 
