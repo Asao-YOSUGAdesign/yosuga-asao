@@ -77,15 +77,19 @@
     .hero {
       position: relative;
       padding: 40px 20px 80px;
+      text-align: center;
+      background: linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
     }
 
     .hero-chr-img {
+      display: block;
       width: 100%;
       max-width: 1100px;
-      aspect-ratio: 4 / 1;
-      object-fit: cover;
-      border-radius: 24px;
+      height: auto;
       margin: 0 auto 40px;
+      border-radius: 24px;
       box-shadow: 0 10px 30px rgba(0,0,0,.15);
     }
 
@@ -307,7 +311,7 @@
       header nav { gap: 1rem; }
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1rem; }
-      .hero-chr-img { max-width: 200px; }
+      /*.hero-chr-img { max-width: 200px; }*/
       section { padding: 40px 15px; }
 
       .representative-box {
