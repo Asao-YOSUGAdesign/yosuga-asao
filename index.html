@@ -13,7 +13,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <!-- ダークモードによる自動変換を抑制 -->
+  <meta name="color-scheme" content="light">
   <style>
+    
+    /*----------------------------------
+    ダークモード対策
+    強制ダークモードの影響を受けにくくする
+    ----------------------------------*/
+    html {
+      color-scheme: light;
+    }
+    
     /* ----- 全体設定 ----- */
     :root {
       --bg-light: #f4f9f5;
