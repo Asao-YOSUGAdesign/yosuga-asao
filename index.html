@@ -74,89 +74,69 @@
     header nav a:hover { color: var(--primary-color); }
 
     /* ----- ヒーローセクション ----- */
-    .hero {
-      position: relative;
-      padding: 40px 20px 80px;
-      text-align: center;
-      background: linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
+    .hero{
+      position:relative;
+      background:#dfeadf;
+      padding:50px 30px;
+      overflow:hidden;
     }
+    .hero-inner{
+      max-width:1100px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+    .hero-main{
+      width:100%;
+      display:block;
+    }
+    .hero-bottom{
+      margin-top:20px;
 
-    .hero-chr-img {
-      display: block;
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      margin: 0 auto 40px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-
-    .hero h1 {
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--primary-color);
-      margin: 20px 0 15px;
+    .hero-logo{
+      width:420px;
+      max-width:50%;
     }
-    /*.hero {
-      position: relative;
-      padding: 60px 20px 80px;
-      text-align: center;
-      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
+    .hero-cta img{
+      width:320px;
+      display:block;
+      transition:.3s;
     }
-    .hero-chr-img {
-      width: 100%;
-      max-width: 1000px;
-      aspect-ratio: 4 / 1;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      margin: 0 auto 30px;
-
-      border-radius: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    .hero-cta:hover img{
+      transform:scale(1.03);
     }
-    .hero-chr-img {
-      max-width: 260px;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.1));
-      border-radius: 16px;
+    .hero{
+      background:#dbe8da;
+      border-radius:0 0 40px 40px;
     }
-    .hero h1 {
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--primary-color);
-      margin-bottom: 15px;
+    .hero-main{
+      width:100%;
+      border-radius:20px;
+      display:block;
     }
-    */
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-sub);
-      margin-bottom: 30px;
-      font-weight: 700;
+    .hero-bottom{
+      margin-top:24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .btn-main {
-      display: inline-block;
-      background: var(--accent-color);
-      color: #fff;
-      padding: 16px 40px;
-      font-weight: 800;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-180px;
+      top:0;
+      width:700px;
+      height:700px;
+      background:url("YOSUGA_BKG.PNG");
+      background-repeat:no-repeat;
+      background-size:contain;
+      opacity:0.08;
     }
-    .btn-main:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 152, 0, 0.6);
-    }
-
+    
     /* ----- セクション共通 ----- */
     section {
       padding: 70px 20px;
@@ -245,6 +225,21 @@
     }
     .btn-line:hover { opacity: 0.85; }
 
+    /* ----- 申込みボタン ----- */
+    .btn-main{
+      display:inline-block;
+      background:var(--primary-color);
+      color:#fff;
+      padding:14px 36px;
+      border-radius:30px;
+      font-weight:700;
+      transition:all .3s;
+    }
+    .btn-main:hover{
+      opacity:.9;
+      transform:translateY(-2px);
+    }
+
     /* ----- SNS・フッター ----- */
     .sns-box { text-align: center; margin-top: 40px; }
     .btn-insta {
@@ -327,8 +322,26 @@
       .representative-message {
         text-align: left;
       }
+      .hero-bottom{
+        flex-direction:column;
+        gap:20px;
+      }
 
-  }
+      .hero-logo{
+        width:280px;
+        max-width:80%;
+      }
+
+      .hero-cta img{
+        width:240px;
+      }
+
+      .hero::after{
+        width:350px;
+        height:350px;
+        right:-100px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -348,14 +361,25 @@
     </nav>
   </header>
 
-  <!-- ヒーローセクション -->
+ <!-- ヒーローセクション -->
   <div class="hero">
-    <img src="YOSUGA_tit.JPG" alt="TEAM YOSUGA Character" class="hero-chr-img">
-    <h1>TEAM YOSUGA</h1>
-    <p>みんなで楽しむ！ パデル ・ ピックルボール ・ テニス</p>
-    <a href="#reserve" class="btn-main">体験・イベント申込み</a>
+    <div class="hero-inner">
+      <img
+        src="YOSUGA_MVP.PNG"
+        alt="TEAM YOSUGA メインビジュアル"
+        class="hero-main">     
+      <div class="hero-bottom">
+        <img
+          src="YOSUGA_LOG.PNG" 
+          alt="TEAM YOSUGA"
+          class="hero-logo">
+        <a href="#reserve" class="hero-cta">
+          <img src="YOSUGA_CTA.png" alt="イベント参加・お申込み"> 
+        </a>
+      </div>
+    </div>
   </div>
-
+    
   <!-- クラブ紹介 -->
   <section id="about">
     <h2 class="section-title">ABOUT YOSUGA</h2>
